@@ -102,4 +102,40 @@ and the result will be saved in the **output_image** folder.
 
 # About trained person classifier model
 
+**box mPA**
 
+ |       Indicator        |       IoU            | area   |        maxDets         | Value|
+ |       :--:             |       :--:           | :--:   |        :--:            | :--: |
+ |Average Precision  (AP) | 0.50:0.95            |   all  | 100                    | 0.569|
+ |Average Precision  (AP) | 0.50                 |  all   | 100                    | 0.825|
+ |Average Precision  (AP) | 0.75                 |   all  | 100                    | 0.620|
+ |Average Precision  (AP) | 0.50:0.95            | small  | 100                    | 0.320|
+ |Average Precision  (AP) | 0.50:0.95            | medium | 100                    | 0.574|
+ |Average Precision  (AP) | 0.50:0.95            | large  | 100                    | 0.729|
+ |Average Recall     (AR) | 0.50:0.95            |   all  | 1                      | 0.195|
+ |Average Recall     (AR) | 0.50:0.95            |   all  | 10                     | 0.584|
+ |Average Recall     (AR) | 0.50:0.95            |  all   | 100                    | 0.675|
+ |Average Recall     (AR) | 0.50:0.95            | small  | 100                    | 0.514|
+ |Average Recall     (AR) | 0.50:0.95            | medium | 100                    | 0.696|
+ |Average Recall     (AR) | 0.50:0.95            | large  | 100                    | 0.793|
+
+**segmentation mPA**
+
+ |       Indicator        |       IoU            | area   |        maxDets         | Value|
+ |       :--:             |       :--:           | :--:   |        :--:            | :--: |
+ |Average Precision  (AP) | 0.50:0.95            |   all  | 100                    | 0.476|
+ |Average Precision  (AP) | 0.50                 |  all   | 100                    | 0.795|
+ |Average Precision  (AP) | 0.75                 |   all  | 100                    | 0.517|
+ |Average Precision  (AP) | 0.50:0.95            | small  | 100                    | 0.224|
+ |Average Precision  (AP) | 0.50:0.95            | medium | 100                    | 0.471|
+ |Average Precision  (AP) | 0.50:0.95            | large  | 100                    | 0.634|
+ |Average Recall     (AR) | 0.50:0.95            |   all  | 1                      | 0.171|
+ |Average Recall     (AR) | 0.50:0.95            |   all  | 10                     | 0.505|
+ |Average Recall     (AR) | 0.50:0.95            |  all   | 100                    | 0.575|
+ |Average Recall     (AR) | 0.50:0.95            | small  | 100                    | 0.419|
+ |Average Recall     (AR) | 0.50:0.95            | medium | 100                    | 0.599|
+ |Average Recall     (AR) | 0.50:0.95            | large  | 100                    | 0.687|
+ 
+# Demo
+
+# Application
