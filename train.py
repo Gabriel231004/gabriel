@@ -114,5 +114,5 @@ def train_model(model_name, num_classes, batch_size, learning_rate, num_epochs):
     torch.save(model,  model_name + '.pt')
 
 if __name__=='__main__':
-    train_model(model_name='my_model', num_classes=1, batch_size=1, learning_rate=0.0001, num_epochs=5)
+    train_model(model_name='my_model', num_classes=1, batch_size=1, learning_rate=0.0001, num_epochs=20)
 
