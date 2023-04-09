@@ -101,6 +101,23 @@ python eval.py
 and the result will be saved in the **output_image** folder.
 
 # About trained person classifier model
+At the beginning, I attempted to train the model using a small dataset. However, due to the complexity of the ResNet50 model, it was too large compared to my sample size, leading to overfitting after a few initial epochs. To address this issue, I gradually lowered the learning rate, but the validation loss continued to be unsatisfactory. As a result, I made the decision to increase the sample size to 20,000 and experimented with various optimizers and hyperparameters such as learning rate, momentum, and weight decay. Ultimately, after several rounds of experimentation, I arrived at a set of optimal parameters that generated the desired results.
+
+[**final_model**](https://duck00036-public-images.s3.ap-northeast-1.amazonaws.com/person_classifier.pt)
+### fianl parameters
+
+* **Class Number** : 1 + 1(background)
+* **Batch Size** : 4
+* **Optimizer** : SGD (momentum = 0.9, weight_decay = 0.0005)
+* **Learning Rate** : 0.00002
+* **lr scheduler** : No
+* **Epoch Number** : 33 with lowest valid loss
+
+### losses curve
+![losses_curve](https://user-images.githubusercontent.com/48171500/230793409-ec36f082-6fbc-4f6f-8622-d0286fae4c92.png)
+After the 33rd epoch, the valid loss starts to increase, so I choose to stop here and take the model with the lowest valid loss
+
+I also evaluated the box mPA and segmentation mPA of the model with the evaluation tool provided by the COCO dataset, and the results looks not bad:
 
 **box mPA**
 
@@ -136,6 +153,12 @@ and the result will be saved in the **output_image** folder.
  |Average Recall     (AR) | 0.50:0.95            | medium | 100                    | 0.599|
  |Average Recall     (AR) | 0.50:0.95            | large  | 100                    | 0.687|
  
+During the evaluation process, I also found something that might be a bit strange, that is, sometimes the prediction results of the model will be more accurate than the annotations of the coco dataset, or it can be said that the annotations of the coco dataset is not always so accurate.
+![ex1](https://user-images.githubusercontent.com/48171500/230794761-fde8d4de-6561-48f6-87d5-e2025303ef9b.jpg)
+![ex2](https://user-images.githubusercontent.com/48171500/230794764-ce2a4641-35fb-4cda-8555-333f63979e41.jpg)
+![ex3](https://user-images.githubusercontent.com/48171500/230794770-d5314b41-e5cf-44d8-95d1-159e1e8b8420.jpg)
+This is not to say that coco dataset is not good, it is still a very good dataset in general, but if the purpose of the model is to identify specific types of objects, a well-labeled custom dataset may further improve the performance of the model, which is one of my future work
+
 # Demo
 
 # Application
