@@ -29,12 +29,12 @@ pip install torch torchvision numpy matplotlib Pillow opencv-python tqdm wget py
 Before you can start training the model, you will need to prepare your custom dataset. The dataset should be organized in the following directory structure:
 ```
 dataset/
-    images/
+    images_train/
         data1.jpg
         data2.jpg
         data3.jpg
         ...
-    annotations/
+    annotations_train/
         data1.npy
         data2.npy
         data3.npy
@@ -60,12 +60,12 @@ where each element of the boxes, labels, and masks arrays corresponds to a singl
 In this repository, I have chosen to work with the person data from the COCO dataset. To utilize the person images and annotations from the COCO dataset, we need to download the entire dataset first. Once downloaded, we should extract the images and annotations for persons and organize them into the structure mentioned above. The specific steps for doing so can be found in the [data_prepare.ipynb](data_prepare.ipynb) notebook. However, if you are working with a different custom dataset, the specific steps may vary depending on the structure and format of your dataset.
 
 # Usage
-## training
+## Training
 To train your own custom dataset, you should first clone this repository
 ```
 git clone https://github.com/duck00036/Training-Mask-RCNN-on-custom-dataset-using-pytorch.git
 ```
-Delete the .gitkeep file in dataset/images_train and dataset/annotations_train, then put your own images and annotations into these two folder.
+Delete the .gitkeep file in **dataset/images_train** and **dataset/annotations_train**, then put your own images and annotations into these two folder.
 
 Run the script:
 ```
@@ -73,7 +73,7 @@ python train.py
 ```
 and the training will start with default parameters.
 
-Or your can use [training_demo.ipynb](training_demo.ipynb) notebook to train or model step by step.
+Or your can use [training_demo.ipynb](training_demo.ipynb) notebook to train your model step by step.
 
 ### default parameters
 
@@ -87,19 +87,19 @@ Or your can use [training_demo.ipynb](training_demo.ipynb) notebook to train or 
 
 Of course, you can tweak it as much as you want by editing the code to make the model fit your data better.
 
-## person classifier
+## Person classifier
 To use the trained person classifier, you should first clone this repository
 ```
 git clone https://github.com/duck00036/Training-Mask-RCNN-on-custom-dataset-using-pytorch.git
 ```
-Download the trained model [here](https://duck00036-public-images.s3.ap-northeast-1.amazonaws.com/person_classifier.pt) in the repository
-
-Put the images to be classified into the input_image folder
+Download the trained model [here](https://duck00036-public-images.s3.ap-northeast-1.amazonaws.com/person_classifier.pt) in the repository, and put the images to be classified into the **input_image** folder
 
 Run the script:
 ```
 python eval.py
 ```
-and the result will be saved in the output_image folder.
+and the result will be saved in the **output_image** folder.
+
+# About trained person classifier model
 
 
