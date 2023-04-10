@@ -4,6 +4,7 @@ from torchvision import transforms
 import numpy as np
 import cv2
 import random
+from tqdm import tqdm
 
 # Randomly get some colors
 def get_colors():
@@ -23,7 +24,7 @@ def colorize(mask,color):
     return color_mask
 
 # Make prediction by mask-rcnn model and return every object's mask, box and class
-def predict(img, model, class_name, threshold=0.5):
+def predict(img, model, class_name, threshold):
     img_tensor = transforms.ToTensor()(img).to(device,torch.float)
     result = model([img_tensor])
     scores = list(result[0]['scores'].cpu().detach().numpy())
@@ -45,9 +46,9 @@ def post_processing(img, colors, masks, boxes, classes):
     return img
 
 # Input raw image and return final processed image
-def get_result(img_path, model, class_name):
+def get_result(img_path, model, class_name, threshold=0.5):
     img = cv2.imread(img_path)
-    masks, boxes, classes = predict(img, model, class_name)
+    masks, boxes, classes = predict(img, model, class_name, threshold)
     result = post_processing(img, get_colors(), masks, boxes, classes)
     return result
 
@@ -66,8 +67,8 @@ if __name__=='__main__':
     class_name = ['__backgrounf__','person']
     
     # Process the input images and save them to the output folder
-    for img in imgs:
-        result = get_result(img_path='input_image/'+img, model=model, class_name=class_name)
+    for img in tqdm(imgs):
+        result = get_result(img_path='input_image/'+img, model=model, class_name=class_name, threshold=0.5)
         cv2.imwrite('output_image/'+img.split('.')[0]+'.jpg', result)
     
     print('completed!')
