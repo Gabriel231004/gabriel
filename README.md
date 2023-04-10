@@ -161,8 +161,17 @@ During the evaluation process, I also found something that might be a bit strang
 This is not to say that coco dataset is not good, it is still a very good dataset in general, but if the purpose of the model is to identify specific types of objects, a well-labeled custom dataset may further improve the performance of the model, which is one of my future work.
 
 # Demo
+## image
 ![1](https://user-images.githubusercontent.com/48171500/230904654-9a08ed9f-8945-4830-a32f-4d10d1b132ad.jpg)
 ![2](https://user-images.githubusercontent.com/48171500/230904662-10b6bff7-c5ca-44c0-a2b4-60a4d29a2346.jpg)
 ![6](https://user-images.githubusercontent.com/48171500/230907553-1c726968-20c5-4a87-af8b-578256e036e8.jpg)
+## video
+![v3](https://user-images.githubusercontent.com/48171500/230919202-3048c152-6759-4644-b298-1b81566fafab.gif)
 
 # Application
+Using the segmentation function of this model, I combined it with another GAN model that can cartoonize images and realized the function of cartooning real people in photos and videos.
+![a2f](https://user-images.githubusercontent.com/48171500/230923691-17cf6677-70cd-432d-adfc-28c8a9e0a999.jpg)
+![a6f](https://user-images.githubusercontent.com/48171500/230923715-c18dc5cc-5861-44ad-84cf-1fcf6fd98081.jpg)
+![a_v2f](https://user-images.githubusercontent.com/48171500/230933181-17a3b910-805d-42fb-b3e9-c6a7aa73857b.gif)
+
+
