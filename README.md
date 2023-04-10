@@ -3,7 +3,8 @@ This repository contains code for training a Mask R-CNN model on a custom datase
 
 One way to save time and resources when building a Mask RCNN model is to use a pre-trained model. In this repository, we will use a pre-trained model with a ResNet-50-FPN backbone provided by torchvision. This model has already undergone extensive training on the COCO dataset, allowing it to learn generalizable features from a large dataset. Fine-tuning this pre-trained model to suit a specific task can significantly reduce the amount of time and resources required compared to training a new model from scratch. In this case, We only need to modify the box predictor layer and the mask predictor layer to fit the custom dataset.
 
-![GITHUB](https://duck00036-public-images.s3.ap-northeast-1.amazonaws.com/output.jpg)
+![4](https://user-images.githubusercontent.com/48171500/230904606-5b72102b-121c-4b54-a4e7-5aea19064417.jpg)
+
 
 # Installation
 To run this project, you will need to install the following packages:
@@ -61,7 +62,7 @@ In this repository, I have chosen to work with the person data from the COCO dat
 
 # Usage
 ## Training
-To train your own custom dataset, you should first clone this repository
+To train your own custom dataset, you should first clone this repository.
 ```
 git clone https://github.com/duck00036/Training-Mask-RCNN-on-custom-dataset-using-pytorch.git
 ```
@@ -88,7 +89,7 @@ Or your can use [training_demo.ipynb](training_demo.ipynb) notebook to train you
 Of course, you can tweak it as much as you want by editing the code to make the model fit your data better.
 
 ## Person classifier
-To use the trained person classifier, you should first clone this repository
+To use the trained person classifier, you should first clone this repository.
 ```
 git clone https://github.com/duck00036/Training-Mask-RCNN-on-custom-dataset-using-pytorch.git
 ```
@@ -115,7 +116,7 @@ At the beginning, I attempted to train the model using a small dataset. However,
 
 ### losses curve
 ![losses_curve](https://user-images.githubusercontent.com/48171500/230793409-ec36f082-6fbc-4f6f-8622-d0286fae4c92.png)
-After the 33rd epoch, the valid loss starts to increase, so I choose to stop here and take the model with the lowest valid loss
+After the 33rd epoch, the valid loss starts to increase, so I choose to stop here and take the model with the lowest valid loss.
 
 I also evaluated the box mPA and segmentation mPA of the model with the evaluation tool provided by the COCO dataset, and the results looks not bad:
 
@@ -157,8 +158,11 @@ During the evaluation process, I also found something that might be a bit strang
 ![ex1](https://user-images.githubusercontent.com/48171500/230794761-fde8d4de-6561-48f6-87d5-e2025303ef9b.jpg)
 ![ex2](https://user-images.githubusercontent.com/48171500/230794764-ce2a4641-35fb-4cda-8555-333f63979e41.jpg)
 ![ex3](https://user-images.githubusercontent.com/48171500/230794770-d5314b41-e5cf-44d8-95d1-159e1e8b8420.jpg)
-This is not to say that coco dataset is not good, it is still a very good dataset in general, but if the purpose of the model is to identify specific types of objects, a well-labeled custom dataset may further improve the performance of the model, which is one of my future work
+This is not to say that coco dataset is not good, it is still a very good dataset in general, but if the purpose of the model is to identify specific types of objects, a well-labeled custom dataset may further improve the performance of the model, which is one of my future work.
 
 # Demo
+![1](https://user-images.githubusercontent.com/48171500/230904654-9a08ed9f-8945-4830-a32f-4d10d1b132ad.jpg)
+![2](https://user-images.githubusercontent.com/48171500/230904662-10b6bff7-c5ca-44c0-a2b4-60a4d29a2346.jpg)
+![6](https://user-images.githubusercontent.com/48171500/230907553-1c726968-20c5-4a87-af8b-578256e036e8.jpg)
 
 # Application
