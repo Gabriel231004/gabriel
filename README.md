@@ -174,4 +174,9 @@ Using the segmentation function of this model, I combined it with another GAN mo
 ![a6f](https://user-images.githubusercontent.com/48171500/230923715-c18dc5cc-5861-44ad-84cf-1fcf6fd98081.jpg)
 ![a_v2f](https://user-images.githubusercontent.com/48171500/230933181-17a3b910-805d-42fb-b3e9-c6a7aa73857b.gif)
 
+# reference
+[TORCHVISION OBJECT DETECTION FINETUNING TUTORIAL](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html#torchvision-object-detection-finetuning-tutorial)
+
+[TORCHVISION MASKRCNN_RESNET50_FPN DOCUMENTATION](https://pytorch.org/vision/main/models/generated/torchvision.models.detection.maskrcnn_resnet50_fpn.html#torchvision.models.detection.maskrcnn_resnet50_fpn)
+
 
