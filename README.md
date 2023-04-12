@@ -170,6 +170,9 @@ This is not to say that coco dataset is not good, it is still a very good datase
 
 # Application
 Using the segmentation function of this model, I combined it with another GAN model that can cartoonize images and realized the function of cartooning real people in photos and videos.
+
+More information can be found in [this repository](https://github.com/duck00036/Cartoonize-people-in-image)
+
 ![a2f](https://user-images.githubusercontent.com/48171500/230923691-17cf6677-70cd-432d-adfc-28c8a9e0a999.jpg)
 ![a6f](https://user-images.githubusercontent.com/48171500/230923715-c18dc5cc-5861-44ad-84cf-1fcf6fd98081.jpg)
 ![a_v2f](https://user-images.githubusercontent.com/48171500/230933181-17a3b910-805d-42fb-b3e9-c6a7aa73857b.gif)
