@@ -120,7 +120,7 @@ After the 33rd epoch, the valid loss starts to increase, so I choose to stop her
 
 I also evaluated the box mPA and segmentation mPA of the model with the evaluation tool provided by the COCO dataset, and the results looks not bad:
 
-**box mPA**
+**box mAP**
 
  |       Indicator        |       IoU            | area   |        maxDets         | Value|
  |       :--:             |       :--:           | :--:   |        :--:            | :--: |
@@ -137,7 +137,7 @@ I also evaluated the box mPA and segmentation mPA of the model with the evaluati
  |Average Recall     (AR) | 0.50:0.95            | medium | 100                    | 0.696|
  |Average Recall     (AR) | 0.50:0.95            | large  | 100                    | 0.793|
 
-**segmentation mPA**
+**segmentation mAP**
 
  |       Indicator        |       IoU            | area   |        maxDets         | Value|
  |       :--:             |       :--:           | :--:   |        :--:            | :--: |
